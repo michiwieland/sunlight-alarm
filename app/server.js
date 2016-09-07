@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'model')));
 app.post('/writeConfiguration', function(req, res){
 	console.log(req.body);
 
-	var configurator = new Configurator();
+	var configurator = new Configurator("configuration.json");
 	configurator.writeConfig(req.body);
 
 });

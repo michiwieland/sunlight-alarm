@@ -13,8 +13,9 @@ var Configurator = (function () {
     }
 
     Configurator.prototype.writeConfig = function(data) {
-	var dataString = JSON.stringify(data);
-	return fs.writeFileSync(this.file, dataString);
+
+			var dataString = JSON.stringify(data);
+			return fs.writeFileSync(this.file, dataString);
     }
 
     return Configurator;
