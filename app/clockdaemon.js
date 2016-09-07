@@ -31,8 +31,8 @@ var Clockdaemon = (function(){
 				light.enlighten();
 				setTimeout(alarm.light.timeout, function(){
 					light.off();
-				};
-			});
+				});
+			}));
 		}
 	};
 

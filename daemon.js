@@ -1,7 +1,7 @@
 'use strict';
 
 var process = require('process');
-var Clockdaemon = require('./src/clockdaemon');
+var Clockdaemon = require('./app/clockdaemon');
 var daemon_clock = new Clockdaemon('./config.json');
 
 process.on('exit', (code) => {
