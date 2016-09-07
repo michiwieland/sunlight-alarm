@@ -3,3 +3,12 @@
 	margin: 0;
 	padding: 0;
 }
+
+label {
+	display: block;
+}
+
+label > span {
+	width: 8rem;
+	display: inline-block;
+}

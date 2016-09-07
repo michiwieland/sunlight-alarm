@@ -1,12 +1,15 @@
 'use strict';
 
 var Alarm = (function(){
-	function Alarm(){
-		this.configurations = [];
+	function Alarm() {
+		this.name;
+		this.time;
+		this.lightIntervall;
+		this.weekDays = [];
 	}
 
-	Configuration.prototype.addConfiguration = function(){
-		this.weekDays.push(new Configuration(name));
+	Alarm.prototype.addWeekday = function(name){
+		this.weekDays.push(new WeekDay(name));
 	};
 
 	return Alarm;

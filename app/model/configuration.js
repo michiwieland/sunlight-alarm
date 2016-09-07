@@ -2,13 +2,11 @@
 
 var Configuration = (function(){
 	function Configuration(){
-		this.time;
-		this.lightIntervall;
-		this.weekDays = [];
+		this.alarms = [];
 	}
 
-	Configuration.prototype.addWeekday = function(name){
-		this.weekDays.push(new WeekDay(name));
+	Configuration.prototype.addAlarm = function(){
+		this.alarms.push(new Alarm());
 	};
 
 	return Configuration;
