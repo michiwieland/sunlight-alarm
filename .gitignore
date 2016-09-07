@@ -1,2 +1,14 @@
 bin/
 node_modules/
+*.acn
+*.aux
+*.glo
+*.idx
+*.ist
+*.lof
+*.log
+*.lol
+*.lot
+*.out
+*.synctex.gz
+*.toc
