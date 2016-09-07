@@ -1,0 +1,24 @@
+{
+  "name": "sunrise-clock",
+  "description": "An elegeant alarm-clock that gives you the sunrise feeling",
+  "main": "",
+  "authors": [
+    "[object Object]"
+  ],
+  "license": "GPL-3.0",
+  "keywords": [
+    "alarm-clock",
+    "milight"
+  ],
+  "homepage": "https://github.com/michiwieland/sunrise-clock",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "2.3.x"
+  }
+}

@@ -1,30 +1,8 @@
 'use strict';
-
-class Configuration {
-	constructor() {
-		this.time;
-		this.lightIntervall;
-		this.weekDays = [];
-	}
-
-	addWeekday(name) {
-		this.weekDays.push(new WeekDay(name));
-	}
-}
-
-class WeekDay {
-	constructor(name) {
-		this.name = name;
-	}
-
-	getName(){
-		return this.name;
-	}
-}
-
+requirejs(['configuration']);
+requirejs(['weekDay']);
 
 document.addEventListener("DOMContentLoaded", function(event) {
-
 	// serialize form
 	function serializeForm() {
 		var configuration = new Configuration();

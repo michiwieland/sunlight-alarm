@@ -1,3 +1,6 @@
+'use strict';
+var Configurator = require('./configurator');
+
 var express = require('express');
 var path = require('path');
 var app = express();
@@ -8,17 +11,14 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 
-var Configurator = require('../src/configurator');
-
-
 // Define the port to run on
 app.set('port', 3000);
-
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'view')));
+app.use(express.static(path.join(__dirname, 'model')));
 
 //
 app.post('/writeConfiguration', function(req, res){
-	console.log(req);
+	console.log(req.body);
 
 	var configurator = new Configurator();
 	configurator.writeConfig(req.body);
