@@ -41,6 +41,8 @@ var Clockdaemon = (function(){
 		this.deleteSchedulingTasks();
 		this.createSchedulingTasks();
 	};
-}
+
+	return Clockdaemon;
+})();
 
 exports = module.exports = Clockdaemon;
