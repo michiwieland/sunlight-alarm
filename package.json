@@ -28,5 +28,5 @@
 	"dependencies": {
 		"node-schedule": "1.1.x"
 	},
-	"license": "GPL"
+	"license": "GPL-3.0"
 }
