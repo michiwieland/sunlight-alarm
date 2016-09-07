@@ -11,7 +11,7 @@
 		"module-name": "./bin/sunrise-clock"
 	},
 	"scripts": {
-		"build": "make",
+		"preinstall": "make",
 		"start": "./bin/sunrise-clock"
 	},
 	"repository": {
