@@ -8,7 +8,8 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 
-var fs = require("fs");
+var Configurator = require('../src/configurator');
+
 
 // Define the port to run on
 app.set('port', 3000);
@@ -19,15 +20,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.post('/writeConfiguration', function(req, res){
 	console.log(req);
 
-	console.log(req.body.time);
-
-	fs.writeFile("configuration.json", req.body.time, function(err){
-		if (err) {
-			return console.log(err);
-		} else {
-			res.send(200);
-		}
-	});
+	var configurator = new Configurator();
+	configurator.writeConfig(req.body);
 
 });
 
