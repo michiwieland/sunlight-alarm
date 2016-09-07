@@ -1,0 +1,32 @@
+{
+	"name": "sunrise-clock",
+	"version": "0.0.1",
+	"description": "An elegeant alarm-clock that gives you the sunrise feeling",
+	"author": "Michael Wieland <michiwieland@hotmail.com>",
+	"contributors": [{
+		"name": "Fabian Hauser",
+		"email": "fabian@fh2.ch"
+	}],
+	"bin": {
+		"module-name": "./bin/sunrise-clock"
+	},
+	"scripts": {
+		"build": "make",
+		"start": "./bin/sunrise-clock"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/michiwieland/sunrise-clock"
+	},
+	"bugs": {
+		"url": "https://github.com/michiwieland/sunrise-clock/issues"
+	},
+	"keywords": [
+		"alarm-clock",
+		"milight"
+	],
+	"dependencies": {
+		"node-schedule": "1.1.x"
+	},
+	"license": "GPL"
+}
