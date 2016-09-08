@@ -4,11 +4,44 @@
 	padding: 0;
 }
 
+body {
+	font-family: Sans-Serif;
+	font-size: 1rem;
+	background: #1D1D1D;
+	padding: 1rem;
+}
+
+main {
+	background: #DC5355;
+	padding: 0.5rem;
+	width: 16rem;
+	margin: 0 auto;
+}
+
+header, footer {
+	color: #E1E1E1;
+	padding: 0.5rem;
+	text-align: center;
+}
+
 label {
 	display: block;
+	margin: 0.5rem 0;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5);
 }
 
 label > span {
 	width: 8rem;
 	display: inline-block;
+}
+
+button {
+	display: block;
+	margin: 0.5rem 0;
+	background: #000;
+	border: none;
+	padding: 0.5rem;
 }
