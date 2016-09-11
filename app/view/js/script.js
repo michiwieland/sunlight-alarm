@@ -3,46 +3,83 @@ requirejs(["alarm"]);
 requirejs(["weekDay"]);
 requirejs(["time"]);
 
-	var timeForm = document.getElementById("time-form");
-	var timeInput = document.getElementById("time");
-	var lightIntervall = document.getElementById("light-intervall");
-	var weekDays = document.getElementsByName("weekday");
+var currentConfiguration;
 
-	// serialize form
-	function serializeForm() {
-		var alarm = new Alarm();
+// serialize form
+function storeChanges() {
+	var alarm = getCurrentAlarm();
 
-		// set time
-		alarm.time = new Time(timeInput.value);
-		alarm.lightIntervall = parseInt(lightIntervall.value);
+	// set time
+	alarm.time = new Time($("#time").val());
+	alarm.lightIntervall = parseInt($("#light-intervall").val());
 
-		// set weekday
-		for (var weekDay of weekDays) {
-			if ( weekDay.checked ) {
-				alarm.addWeekday(weekDay.id);
-			}
-		}
-
-		return JSON.stringify(alarm);
+	// set weekday
+	for (var weekDay of alarm.weekDays) {
+		weekDay.selected = $("#" + weekDay.name).is(':checked');
 	}
+}
 
-	function writeConfiguration() {
-		var request = new XMLHttpRequest();
-		request.open('POST', 'http://localhost:3000/writeConfiguration', true);
-		request.setRequestHeader("Content-Type", "application/json");
+function saveConfiguration() {
+	storeChanges();
+	var postData = JSON.stringify(currentConfiguration);
+	console.log(postData);
+	$.post("http://localhost:3000/saveConfiguration", postData, null, "json");
+}
 
-		var postData = serializeForm();
+function loadConfigurations() {
+	// load available configurations from raspi
+	$.get("http://localhost:3000/loadConfigurations", function(jsonData){
 
-		// debug
-		console.log(postData)
+		// load template and compile
+		$.get('templates/configurations.handlebars', function (templateSource) {
+	    var template = Handlebars.compile(templateSource);
+			currentConfiguration = JSON.parse(jsonData);
+			var view = template({configurations: currentConfiguration.alarms});
+	    $("#configurations").html(view);
 
-		request.send(postData);
-	}
-
-// Ready Event
-document.addEventListener("DOMContentLoaded", function(event) {
-	timeForm.addEventListener("submit", function(event) {
-		writeConfiguration();
+			// load alarm for selected configuration
+			loadAlarm($("#configurations").val());
+		}, 'html')
 	});
+}
 
-});
+function loadAlarm(name) {
+	var selectedAlarm = getCurrentAlarm();
+
+	$.get('templates/alarm.handlebars', function (templateSource) {
+		var template = Handlebars.compile(templateSource);
+		var view = template({alarm: selectedAlarm});
+		$("#alarms").html(view);
+	}, 'html')
+}
+
+function getCurrentAlarm() {
+	for (var alarm of currentConfiguration.alarms) {
+		if ( alarm.name === $("#configurations").val() ) {
+			alarm.selected = true;
+			return alarm;
+		} else {
+			alarm.selected = false;
+		}
+	}
+}
+
+(function($){
+
+	// dom content ready
+	$(function() {
+
+		// load templates
+		loadConfigurations();
+
+		// save configuration
+		$("#time-form").on("submit", function(){
+				saveConfiguration();
+				return false;
+		});
+
+		$("#configurations").on("change", function() {
+			loadAlarm();
+		})
+	});
+})(jQuery);

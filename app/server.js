@@ -16,12 +16,19 @@ app.set('port', 3000);
 app.use(express.static(path.join(__dirname, 'view')));
 app.use(express.static(path.join(__dirname, 'model')));
 
-//
-app.post('/writeConfiguration', function(req, res){
+// Save a single alarm configuration
+app.post('/saveConfiguration', function(req, res){
 	console.log(req.body);
 
 	var configurator = new Configurator("configuration.json");
 	configurator.writeConfig(req.body);
+});
+
+// Load all available alarm configurations
+app.get('/loadConfigurations', function(req, res){
+	var configurator = new Configurator("configuration.json");
+	var json = JSON.stringify(configurator.readConfig());
+	res.end(json);
 });
 
 // Listen for requests

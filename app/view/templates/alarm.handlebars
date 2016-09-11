@@ -1,0 +1,12 @@
+{{#each alarm.weekDays}}
+	<label for="{{name}}">
+		<span>{{name}}</span>
+		<input type="checkbox" name="weekday" id="{{name}}" {{#if selected}}checked{{/if}} />
+	</label>
+{{/each}}
+
+<label for="time">Time [hh:mm]</label>
+<input type="time" name="time" id="time" value="{{alarm.time.hours}}:{{alarm.time.minutes}}" pattern="([0-1]?[0-9]{1}|2[0-3]{1}):([0-5]{1})?[0-9]{1}" placeholder="hh:mm" autofocus required/>
+
+<label for="light-duration">Light Duration [min]</label>
+<input type="time" name="light-intervall" value="{{alarm.lightIntervall}}" pattern="([0-5]{1})?[0-9]{1}" placeholder="mm" id="light-intervall" />

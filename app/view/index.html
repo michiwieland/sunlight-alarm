@@ -19,59 +19,34 @@
 		</header>
 		<main>
 			<form id="time-form">
+
+				<!--configurations -->
 				<label for="configurations">
 					<span>Configurations</span>
 					<select id="configurations"></select>
 				</label>
 
-				<label for="monday">
-					<span>Monday</span>
-					<input type="checkbox" name="weekday" id="monday" checked />
-				</label>
+				<!--alarms -->
+				<div id="alarms"></div>
 
-				<label for="tuesday">
-					<span>Tuesday</span>
-					<input type="checkbox" name="weekday" id="tuesday" checked />
-				</label>
-
-				<label for="wednesday">
-					<span>Wednesday</span>
-				<input type="checkbox" name="weekday" id="wednesday" checked />
-				</label>
-
-				<label for="thursday">
-					<span>Thursday</span>
-					<input type="checkbox" name="weekday" id="thursday" checked />
-				</label>
-
-				<label for="friday">
-					<span>Friday</span>
-					<input type="checkbox" name="weekday" id="friday" checked />
-				</label>
-
-				<label for="saturday">
-					<span>Saturday</span>
-					<input type="checkbox" name="weekday" id="saturday" />
-				</label>
-
-				<label for="sunday">
-					<span>Sunday</span>
-					<input type="checkbox" name="weekday" id="sunday" />
-				</label>
-
-				<label for="time">Time [hh:mm]</label>
-				<input type="time" name="time" id="time" pattern="([0-1]?[0-9]{1}|2[0-3]{1}):([0-5]{1})?[0-9]{1}" placeholder="hh:mm" autofocus required/>
-
-				<label for="light-duration">Light Duration [min]</label>
-				<input type="time" name="light-intervall" pattern="([0-5]{1})?[0-9]{1}" placeholder="mm" id="light-intervall" />
-
+				<!-- store configurations -->
 				<button type="submit">Save Configuration</button>
+
 			<form>
 		</main>
 		<footer>
 			<small>Fabian Hauser und Michael Wieland</small>
 		</footer>
+
+		<!--scripts -->
+		<script src="bower-components/jquery/dist/jquery.min.js"></script>
+		<script src="bower-components/handlebars/handlebars.min.js"></script>
 		<script src="bower-components/requirejs/require.js"></script>
+
+		<!--templates -->
+		<script src="templates/alarm.handlebars" type="text/x-handlebars-template"></script>
+		<script src="templates/configurations.handlebars" type="text/x-handlebars-template"></script>
+
 		<script src="js/script.js"></script>
 	</body>
 </html>

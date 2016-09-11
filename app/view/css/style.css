@@ -7,19 +7,26 @@
 body {
 	font-family: Sans-Serif;
 	font-size: 1rem;
-	background: #1D1D1D;
+	background: #3D4350;
+	color: #E3E7EB;
 	padding: 1rem;
 }
 
+main,
+button,
+input {
+	border-radius: 0.3rem;
+	border: none;
+}
+
 main {
-	background: #DC5355;
-	padding: 0.5rem;
-	width: 16rem;
+	background: #242830;
+	max-width: 20rem;
 	margin: 0 auto;
+	padding: 0.5rem 1rem;
 }
 
 header, footer {
-	color: #E1E1E1;
 	padding: 0.5rem;
 	text-align: center;
 }
@@ -27,6 +34,10 @@ header, footer {
 label {
 	display: block;
 	margin: 0.5rem 0;
+}
+
+input {
+	padding: 0.5rem;
 }
 
 input[type="checkbox"] {
@@ -40,8 +51,9 @@ label > span {
 
 button {
 	display: block;
-	margin: 0.5rem 0;
-	background: #000;
-	border: none;
-	padding: 0.5rem;
+	cursor: pointer;
+	margin: 1rem 0;
+	padding: 0.4rem;
+	background: #FE3D6C;
+	input: 1rem;
 }

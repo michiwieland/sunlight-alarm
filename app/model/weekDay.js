@@ -1,8 +1,9 @@
 'use strict';
 
 var WeekDay = (function(){
-	function WeekDay(name){
+	function WeekDay(name, selected){
 		this.name = name;
+		this.selected = selected;
 	}
 
 	return WeekDay;
