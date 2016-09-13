@@ -20,20 +20,30 @@ function storeChanges() {
 }
 
 function saveConfiguration() {
+
+	// store changes in global object
 	storeChanges();
+
+	// send json string to server
 	var postData = JSON.stringify(currentConfiguration);
-	console.log(postData);
-	$.post("http://localhost:3000/saveConfiguration", postData, null, "json");
+	$.ajax({
+		url: "http://localhost:3000/saveConfiguration",
+		type:"POST",
+		data:postData,
+		contentType:"application/json; charset=utf-8",
+		dataType:"json"
+	});
 }
 
 function loadConfigurations() {
-	// load available configurations from raspi
-	$.get("http://localhost:3000/loadConfigurations", function(jsonData){
+
+	// load available configurations from server
+	$.getJSON("http://localhost:3000/loadConfigurations", function(serverConfiguration){
 
 		// load template and compile
 		$.get('templates/configurations.handlebars', function (templateSource) {
 	    var template = Handlebars.compile(templateSource);
-			currentConfiguration = JSON.parse(jsonData);
+			currentConfiguration = serverConfiguration;
 			var view = template({configurations: currentConfiguration.alarms});
 	    $("#configurations").html(view);
 

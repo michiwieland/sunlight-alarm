@@ -14,4 +14,8 @@ var Time = (function(){
 	return Time;
 })();
 
-exports = module.exports = Time;
+define(function (require, exports, module) {
+
+	exports = module.exports = Time;
+
+});

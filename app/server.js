@@ -5,6 +5,7 @@ var express = require('express');
 var path = require('path');
 var app = express();
 
+// body parser for POST requests
 var bodyParser = require('body-parser')
 app.use(bodyParser.json() );
 app.use(bodyParser.urlencoded({
@@ -16,10 +17,8 @@ app.set('port', 3000);
 app.use(express.static(path.join(__dirname, 'view')));
 app.use(express.static(path.join(__dirname, 'model')));
 
-// Save a single alarm configuration
+// Save configurations
 app.post('/saveConfiguration', function(req, res){
-	console.log(req.body);
-
 	var configurator = new Configurator("configuration.json");
 	configurator.writeConfig(req.body);
 });
@@ -27,8 +26,7 @@ app.post('/saveConfiguration', function(req, res){
 // Load all available alarm configurations
 app.get('/loadConfigurations', function(req, res){
 	var configurator = new Configurator("configuration.json");
-	var json = JSON.stringify(configurator.readConfig());
-	res.end(json);
+	res.json(configurator.readConfig());
 });
 
 // Listen for requests

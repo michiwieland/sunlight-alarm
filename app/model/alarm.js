@@ -16,4 +16,8 @@ var Alarm = (function(){
 	return Alarm;
 })();
 
-exports = module.exports = Alarm;
+define(function (require, exports, module) {
+
+	exports = module.exports = Alarm;
+	
+});

@@ -12,4 +12,8 @@ var Configuration = (function(){
 	return Configuration;
 })();
 
-exports = module.exports = Configuration;
+define(function (require, exports, module) {
+
+	exports = module.exports = Configuration;
+
+});
