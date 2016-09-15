@@ -32,6 +32,11 @@ function saveConfiguration() {
 		data:postData,
 		contentType:"application/json; charset=utf-8",
 		dataType:"json"
+	}).done(function() {
+		$("button").first().addClass("success");
+		setTimeout(function () {
+			$("button").first().removeClass("success");
+		}, 1500);
 	});
 }
 

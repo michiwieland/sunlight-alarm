@@ -56,4 +56,9 @@ button {
 	padding: 0.4rem;
 	background: #FE3D6C;
 	input: 1rem;
+  transition: background-color 500ms linear;
+}
+
+.success {
+	background: #27ae60;
 }

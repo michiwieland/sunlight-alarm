@@ -21,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'model')));
 app.post('/saveConfiguration', function(req, res){
 	var configurator = new Configurator("configuration.json");
 	configurator.writeConfig(req.body);
+	res.status(200).send({success: true});
 });
 
 // Load all available alarm configurations
