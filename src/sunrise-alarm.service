@@ -2,8 +2,8 @@
 Description=sunlight-alarm: A nice alarm clock
 
 [Service]
-WorkingDirectory=/opt/sunlight-alarm/app/
-ExecStart=/usr/bin/node /opt/sunlight-alarm/app/sunlight-alarm
+WorkingDirectory=/opt/sunrise-alarm/app/
+ExecStart=/usr/bin/node /opt/sunrise-alarm/app/sunlight-alarm
 Restart=always
            
 [Install]
