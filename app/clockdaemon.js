@@ -8,8 +8,8 @@ var LightController = require('./lightcontroller');
 var Clockdaemon = (function(){
 	function Clockdaemon(configfile){
 		this.configurator = new Configurator(configfile);
-		this.reload();
 		this.alarms = [];
+		this.reload();
 	}
 
 	Clockdaemon.prototype.cleanup = function(){
@@ -21,13 +21,14 @@ var Clockdaemon = (function(){
 	};
 
 	Clockdaemon.prototype.deleteSchedulingTasks = function(){
-		while(var alarm = this.alarms.pop()) {
+		var alarm;
+		while(alarm = this.alarms.pop()) {
 			alarm.cancel();
 		}
 	};
 
 	Clockdaemon.prototype.createSchedulingTasks = function(){
-		for(var alarm of config.alarms){
+		for(var alarm of this.config.alarms){
 			// TODO: alarmtime
 			var alarmtime = this.configurator.getAlarmCronTime(alarm);
 			this.alarms.push(schedule.scheduleJob(alarmtime, function(){

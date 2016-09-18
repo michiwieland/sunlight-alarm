@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+var Clockdaemon = require('./clockdaemon');
+
+var daemon = new Clockdaemon('./configuration.json');
