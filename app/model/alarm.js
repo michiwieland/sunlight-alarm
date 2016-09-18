@@ -5,7 +5,8 @@ var Alarm = (function(){
 		this.name;
 		this.selected;
 		this.time;
-		this.lightIntervall;
+		this.enlightDuration;
+		this.lightDuration;
 		this.weekDays = [];
 	}
 
@@ -19,5 +20,5 @@ var Alarm = (function(){
 define(function (require, exports, module) {
 
 	exports = module.exports = Alarm;
-	
+
 });

@@ -34,7 +34,8 @@
 				}
 			],
 			"time":{"hours":7,"minutes":0},
-			"lightIntervall":15
+			"enlightDuration":5,
+			"lightDuration":10
 		},
 		{
 			"name":"Wochenende",
@@ -70,7 +71,8 @@
 				}
 			],
 			"time":{"hours":10,"minutes":5},
-			"lightIntervall":15
+			"enlightDuration":5,
+			"lightDuration":10
 		}
 	]
 }
