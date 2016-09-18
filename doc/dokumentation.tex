@@ -137,6 +137,14 @@ sudo apt-get dist-upgrade -y
 sudo raspi-config
 \end{lstlisting}
 
+\subsubsection{Zeitzone einstellen}
+\begin{enumerate}
+	\item \lstinline|sudo dpkg-reconfigure tzdata|
+	\item Europe
+	\item Zurich
+\end{enumerate}
+
+
 \subsubsection{Git installieren}
 Unser Projekt mit dem NodeJS Server und den benötigten Libraries ist frei auf Github verfügbar. Damit wir das Projekt auf den Raspberry Pi klonen können, benötigen wird \lstinline|git|
 \begin{lstlisting}[caption=Git installieren]
@@ -156,8 +164,6 @@ sudo cp -R * /usr/local/
 \begin{lstlisting}[caption=Github klonen]
 git clone https://github.com/michiwieland/sunrise-clock
 cd sunrise-clock
-sudo make all
-cd app
 sudo npm install
 sudo npm install -g bower
 bower install
