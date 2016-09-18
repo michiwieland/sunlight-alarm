@@ -6,7 +6,7 @@
 {{/each}}
 
 <label for="time">Time [hh:mm]</label>
-<input type="time" name="time" id="time" value="{{alarm.time.hours}}:{{alarm.time.minutes}}" pattern="([0-1]?[0-9]{1}|2[0-3]{1}):([0-5]{1})?[0-9]{1}" placeholder="hh:mm" autofocus required/>
+<input type="time" name="time" id="time" value="{{leading-zero alarm.time.hours}}:{{leading-zero alarm.time.minutes}}" pattern="([0-1]?[0-9]{1}|2[0-3]{1}):([0-5]{1})?[0-9]{1}" placeholder="hh:mm" autofocus required/>
 
 <label for="entlight-duration">Enlight duration [min]</label>
 <input type="time" name="entlight-duration" value="{{alarm.enlightDuration}}" pattern="([0-5]{1})?[0-9]{1}" placeholder="mm" id="enlight-duration" />

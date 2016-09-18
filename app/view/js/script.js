@@ -49,7 +49,7 @@ function loadConfigurations() {
 		$.get('templates/configurations.handlebars', function (templateSource) {
 	    var template = Handlebars.compile(templateSource);
 			currentConfiguration = serverConfiguration;
-			var view = template({configurations: currentConfiguration.alarms});
+			var view = template({alarms: currentConfiguration.alarms});
 	    $("#configurations").html(view);
 
 			// load alarm for selected configuration
@@ -69,14 +69,16 @@ function loadAlarm(name) {
 }
 
 function getCurrentAlarm() {
+	var selectedAlarm;
 	for (var alarm of currentConfiguration.alarms) {
 		if ( alarm.name === $("#configurations").val() ) {
 			alarm.selected = true;
-			return alarm;
+			selectedAlarm = alarm;
 		} else {
 			alarm.selected = false;
 		}
 	}
+	return selectedAlarm;
 }
 
 (function($){
