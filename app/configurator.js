@@ -43,10 +43,10 @@ var Configurator = (function () {
 			}
 			weekdays_array.push(daynum);
 		}
+		weekdays_array.sort();
 		var weekdays = weekdays_array.join();
 
 		return "0 " + minute + " " + hour + " * * " + weekdays;
-		
 	}
 
 	return Configurator;
