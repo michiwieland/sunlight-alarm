@@ -12,3 +12,8 @@ send_cmd:
 
 openmilight:
 	$(CPP) -lrf24-bcm src/PL1167_nRF24.cpp src/MiLightRadio.cpp src/openmilight.cpp -o bin/openmilight
+
+create-daemon:
+	cp ./src/sunlight-alarm.service /etc/systemd/system/
+	systemctl enable sunlight-alarm.service
+	systemctl start sunlight-alarm.service
