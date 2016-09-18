@@ -37,8 +37,8 @@ var Clockdaemon = (function(){
 					light.dimToLowest();
 					// ^ is required as the bulb goes to the last used mode on boot
 					light.off();
-				}, alarm.lightDuration * 60 * 1000);
-			}));
+				}.bind(this), alarm.lightDuration * 60 * 1000);
+			}.bind(this)));
 		}
 	};
 

@@ -22,7 +22,7 @@ var LightController = (function(){
 			setTimeout(function(){
 				this.on();
 				this.lighten();
-			}, i * duration/13 * 1000);
+			}.bind(this), i * duration/13 * 1000);
 		}
 	};
 
