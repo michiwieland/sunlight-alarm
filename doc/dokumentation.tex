@@ -156,8 +156,11 @@ sudo cp -R * /usr/local/
 \begin{lstlisting}[caption=Github klonen]
 git clone https://github.com/michiwieland/sunrise-clock
 cd sunrise-clock
-make all
-sudo make install	
+sudo make all
+cd app
+sudo npm install
+sudo npm install -g bower
+bower install
 \end{lstlisting}
 
 \section{Befehle}
