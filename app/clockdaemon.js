@@ -21,17 +21,23 @@ var Clockdaemon = (function(){
 	};
 
 	Clockdaemon.prototype.deleteSchedulingTasks = function(){
-		// TODO: unschedule
+		while(var alarm = this.alarms.pop()) {
+			alarm.cancel();
+		}
 	};
 
 	Clockdaemon.prototype.createSchedulingTasks = function(){
 		for(var alarm of config.alarms){
-			this.alarms.push(schedule.scheduleJob(alarm.time, function(){
+			// TODO: alarmtime
+			var alarmtime = this.configurator.getAlarmCronTime(alarm);
+			this.alarms.push(schedule.scheduleJob(alarmtime, function(){
 				var light = new LightController();
-				light.enlighten();
-				setTimeout(alarm.light.timeout, function(){
+				light.enlighten(alarm.enlightDuration * 60);
+				setTimeout(function(){
+					light.dimToLowest();
+					// ^ is required as the bulb goes to the last used mode on boot
 					light.off();
-				});
+				}, alarm.lightDuration * 60 * 1000);
 			}));
 		}
 	};

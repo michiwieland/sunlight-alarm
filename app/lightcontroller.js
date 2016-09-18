@@ -19,10 +19,10 @@ var LightController = (function(){
 		this.nightmode();
 
 		for(var i=1; i<14; i++) {
-			setTimeout(i * duration/13 * 1000, function(){
+			setTimeout(function(){
 				this.on();
 				this.lighten();
-			});
+			}, i * duration/13 * 1000);
 		}
 	};
 
