@@ -4,7 +4,7 @@ var child_process = require('child_process');
 
 var LightController = (function(){
 	function LightController(){
-		this.controllerBinary = './bin/send-milight-cmd';
+		this.controllerBinary = '../bin/send-milight-cmd';
 	}
 
 	LightController.prototype.sendCommand = function(command){
