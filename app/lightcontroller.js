@@ -27,11 +27,11 @@ var LightController = (function(){
 	};
 
 	LightController.prototype.lighten = function(){
-		this.sendCommand("5A AC 39 00 04 06 50");
+		this.sendCommand("5A AC 39 00 0C E5 37");
 	};
 
 	LightController.prototype.dim = function(){
-		this.sendCommand("5A AC 39 00 14 E8 42");
+		this.sendCommand("5A AC 39 00 04 F2 3C");
 	};
 
 	LightController.prototype.dimToLowest = function() {
