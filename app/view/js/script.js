@@ -11,7 +11,8 @@ function storeChanges() {
 
 	// set time
 	alarm.time = new Time($("#time").val());
-	alarm.lightIntervall = parseInt($("#light-intervall").val());
+	alarm.enlightDuration = parseInt($("#entlight-duration").val());
+	alarm.lightDuration = parseInt($("#light-duration").val());
 
 	// set weekday
 	for (var weekDay of alarm.weekDays) {
