@@ -1,1 +1,84 @@
-{"alarms":[{"name":"Wochentage","selected":false,"weekDays":[{"name":"monday","selected":true},{"name":"tuesday","selected":true},{"name":"wednesday","selected":true},{"name":"thursday","selected":true},{"name":"friday","selected":true},{"name":"saturday","selected":false},{"name":"sunday","selected":false}],"time":{"hours":7,"minutes":0},"enlightDuration":5,"lightDuration":10},{"name":"Wochenende","selected":true,"weekDays":[{"name":"monday","selected":false},{"name":"tuesday","selected":false},{"name":"wednesday","selected":false},{"name":"thursday","selected":false},{"name":"friday","selected":false},{"name":"saturday","selected":true},{"name":"sunday","selected":true}],"time":{"hours":20,"minutes":46},"enlightDuration":5,"lightDuration":10}]}
+{
+  "alarms": [
+    {
+      "name": "Wochentage",
+      "selected": false,
+      "weekDays": [
+        {
+          "name": "monday",
+          "selected": true
+        },
+        {
+          "name": "tuesday",
+          "selected": true
+        },
+        {
+          "name": "wednesday",
+          "selected": true
+        },
+        {
+          "name": "thursday",
+          "selected": true
+        },
+        {
+          "name": "friday",
+          "selected": true
+        },
+        {
+          "name": "saturday",
+          "selected": false
+        },
+        {
+          "name": "sunday",
+          "selected": false
+        }
+      ],
+      "time": {
+        "hours": 7,
+        "minutes": 0
+      },
+      "enlightDuration": 5,
+      "lightDuration": 10
+    },
+    {
+      "name": "Wochenende",
+      "selected": true,
+      "weekDays": [
+        {
+          "name": "monday",
+          "selected": false
+        },
+        {
+          "name": "tuesday",
+          "selected": true
+        },
+        {
+          "name": "wednesday",
+          "selected": false
+        },
+        {
+          "name": "thursday",
+          "selected": false
+        },
+        {
+          "name": "friday",
+          "selected": false
+        },
+        {
+          "name": "saturday",
+          "selected": true
+        },
+        {
+          "name": "sunday",
+          "selected": true
+        }
+      ],
+      "time": {
+        "hours": 19,
+        "minutes": 15
+      },
+      "enlightDuration": 5,
+      "lightDuration": 10
+    }
+  ]
+}

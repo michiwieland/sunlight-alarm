@@ -52,4 +52,4 @@ var Clockdaemon = (function(){
 	return Clockdaemon;
 })();
 
-exports = module.exports = Clockdaemon;
+module.exports = Clockdaemon;

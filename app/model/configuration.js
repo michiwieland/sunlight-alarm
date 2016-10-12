@@ -12,8 +12,4 @@ var Configuration = (function(){
 	return Configuration;
 })();
 
-define(function (require, exports, module) {
-
-	exports = module.exports = Configuration;
-
-});
+module.exports = Configuration;

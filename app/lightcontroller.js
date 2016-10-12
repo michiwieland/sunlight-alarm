@@ -16,17 +16,18 @@ var LightController = (function(){
 
 	LightController.prototype.enlighten = function(duration){
 		// Enable Night Mode
+		this.on();
 		this.nightmode();
 
 		for(var i=1; i<14; i++) {
-			setTimeout(function(){
-				this.on();
+			setTimeout(function() {
 				this.lighten();
 			}.bind(this), i * duration/13 * 1000);
 		}
 	};
 
 	LightController.prototype.lighten = function(){
+		console.log("light it up :)");
 		this.sendCommand("5A AC 39 00 0C E5 37");
 	};
 
@@ -68,4 +69,4 @@ var LightController = (function(){
 	return LightController;
 })();
 
-exports = module.exports = LightController;
+module.exports = LightController;

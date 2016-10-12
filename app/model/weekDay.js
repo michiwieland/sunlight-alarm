@@ -9,8 +9,4 @@ var WeekDay = (function(){
 	return WeekDay;
 })();
 
-define(function (require, exports, module) {
-
-	exports = module.exports = WeekDay;
-
-});
+module.exports = WeekDay;

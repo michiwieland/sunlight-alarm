@@ -52,4 +52,4 @@ var Configurator = (function () {
 	return Configurator;
 })();
 
-exports = module.exports = Configurator;
+module.exports = Configurator;
