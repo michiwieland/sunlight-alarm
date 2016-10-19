@@ -30,7 +30,7 @@ var Webserver = (function(){
 
 	Webserver.prototype.setRoutes = function() {
 		// Save configurations
-		this.app.post('/saveConfiguration', function(req, res){
+		this.app.post('/api/v2/configuration', function(req, res){
 			var configurator = new Configurator("configuration.json");
 			configurator.writeConfig(req.body);
 			this.daemon.reload();
@@ -38,7 +38,7 @@ var Webserver = (function(){
 		}.bind(this));
 
 		// Load all available alarm configurations
-		this.app.get('/loadConfigurations', function(req, res){
+		this.app.get('/api/v2/configuration', function(req, res){
 			var configurator = new Configurator("configuration.json");
 			res.json(configurator.readConfig());
 		}.bind(this));

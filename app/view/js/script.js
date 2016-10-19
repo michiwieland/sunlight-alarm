@@ -28,7 +28,7 @@ function saveConfiguration() {
 	// send json string to server
 	var postData = JSON.stringify(currentConfiguration);
 	$.ajax({
-		url: "/saveConfiguration",
+		url: "/api/v2/configuration",
 		type:"POST",
 		data:postData,
 		contentType:"application/json; charset=utf-8",
@@ -44,7 +44,7 @@ function saveConfiguration() {
 function loadConfigurations() {
 
 	// load available configurations from server
-	$.getJSON("/loadConfigurations", function(serverConfiguration){
+	$.getJSON("/api/v2/configuration", function(serverConfiguration){
 
 		// load template and compile
 		$.get('templates/configurations.handlebars', function (templateSource) {
