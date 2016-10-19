@@ -1,9 +1,9 @@
 [Unit]
-Description=sunlight-alarm: A nice alarm clock
+Description=sunrise-clock: A nice alarm clock
 
 [Service]
-WorkingDirectory=/opt/sunrise-alarm/app/
-ExecStart=/usr/bin/node /opt/sunrise-alarm/app/sunlight-alarm
+WorkingDirectory=/opt/sunrise-clock/app/
+ExecStart=/usr/bin/node /opt/sunrise-clock/app/sunrise-clock
 Restart=always
            
 [Install]
