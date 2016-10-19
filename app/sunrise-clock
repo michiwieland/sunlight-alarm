@@ -2,3 +2,5 @@
 var Clockdaemon = require('./clockdaemon');
 
 var daemon = new Clockdaemon('./configuration.json');
+
+var server = require('./server');

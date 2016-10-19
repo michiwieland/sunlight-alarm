@@ -12,7 +12,7 @@
 	},
 	"scripts": {
 		"preinstall": "make",
-		"start": "./app/sunrise-clock"
+		"start": "cd ./app && ./sunrise-clock"
 	},
 	"repository": {
 		"type": "git",
