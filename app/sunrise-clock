@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 var Clockdaemon = require('./clockdaemon');
+var Webserver = require('./webserver');
 
 var daemon = new Clockdaemon('./configuration.json');
-
-var server = require('./server');
+var webserver = new Webserver(daemon);
