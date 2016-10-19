@@ -8,11 +8,11 @@
 		"email": "fabian@fh2.ch"
 	}],
 	"bin": {
-		"module-name": "./bin/sunrise-clock"
+		"module-name": "./app/sunrise-clock"
 	},
 	"scripts": {
 		"preinstall": "make",
-		"start": "./bin/sunrise-clock"
+		"start": "./app/sunrise-clock"
 	},
 	"repository": {
 		"type": "git",
