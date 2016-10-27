@@ -18,14 +18,14 @@ var Configurator = (function () {
 	}
 
 	Configurator.prototype.getAlarmCronTime = function(alarm) {
-		var hour = alarm.time.hours;
-		var minute = alarm.time.minutes;
+		var time = new Date(alarm.time);
+		var hour = time.getHours();
+		var minute = time.getMinutes();
+
 		var weekdays_array = [];
 		for(var day of alarm.weekDays) {
-			if(day.selected === false) continue;
-
 			var daynum;
-			switch(day.name) {
+			switch(day) {
 				case "sunday":
 					daynum = 0; break;
 				case "monday":

@@ -29,7 +29,6 @@ var Clockdaemon = (function(){
 
 	Clockdaemon.prototype.createSchedulingTasks = function(){
 		for(var alarm of this.config.alarms){
-			// TODO: alarmtime
 			var alarmtime = this.configurator.getAlarmCronTime(alarm);
 			this.alarms.push(schedule.scheduleJob(alarmtime, function(){
 				var light = new LightController();

@@ -1,84 +1,29 @@
 {
   "alarms": [
     {
-      "name": "Wochentage",
       "selected": false,
+      "enlightDuration": 10,
+      "lightDuration": 10,
+      "name": "Wochenende",
+      "time": "1970-01-01T11:00:00+0100",
       "weekDays": [
-        {
-          "name": "monday",
-          "selected": true
-        },
-        {
-          "name": "tuesday",
-          "selected": true
-        },
-        {
-          "name": "wednesday",
-          "selected": true
-        },
-        {
-          "name": "thursday",
-          "selected": true
-        },
-        {
-          "name": "friday",
-          "selected": true
-        },
-        {
-          "name": "saturday",
-          "selected": false
-        },
-        {
-          "name": "sunday",
-          "selected": false
-        }
-      ],
-      "time": {
-        "hours": 7,
-        "minutes": 0
-      },
-      "enlightDuration": 5,
-      "lightDuration": 10
+        "saturday",
+        "sunday"
+      ]
     },
     {
-      "name": "Wochenende",
       "selected": true,
+      "enlightDuration": 10,
+      "lightDuration": 10,
+      "name": "Wochentage",
+      "time": "1970-01-01T09:00:00+0100",
       "weekDays": [
-        {
-          "name": "monday",
-          "selected": false
-        },
-        {
-          "name": "tuesday",
-          "selected": true
-        },
-        {
-          "name": "wednesday",
-          "selected": false
-        },
-        {
-          "name": "thursday",
-          "selected": false
-        },
-        {
-          "name": "friday",
-          "selected": false
-        },
-        {
-          "name": "saturday",
-          "selected": true
-        },
-        {
-          "name": "sunday",
-          "selected": true
-        }
-      ],
-      "time": {
-        "hours": 19,
-        "minutes": 15
-      },
-      "enlightDuration": 5,
-      "lightDuration": 10
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday"
+      ]
     }
   ]
 }
