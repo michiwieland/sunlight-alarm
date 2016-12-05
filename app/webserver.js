@@ -34,7 +34,7 @@ var Webserver = (function(){
 			var configurator = new Configurator("configuration.json");
 			configurator.writeConfig(req.body);
 			this.daemon.reload();
-			res.status(200).send({success: true});
+			res.status(200).json({success: true});
 		}.bind(this));
 
 		// Load all available alarm configurations
